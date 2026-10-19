@@ -1,13 +1,13 @@
-package uk.ac.westminster.products_api;
+package uk.ac.westminster.products_api.Product;
 
 public class Product {
 
-    private long id;
+    private Long id;
     private String name;
     private double price;
 
     public Product(){}
-    public Product(long id, String name, double price){
+    public Product(Long id, String name, double price){
         this.id = id;
         this.name = name;
         this.price = price;

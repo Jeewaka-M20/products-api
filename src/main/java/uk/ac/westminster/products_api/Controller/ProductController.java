@@ -1,4 +1,4 @@
-package uk.ac.westminster.products_api;
+package uk.ac.westminster.products_api.Controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import uk.ac.westminster.products_api.Product.Product;
+import uk.ac.westminster.products_api.Service.ProductService;
 
 import java.util.List;
 

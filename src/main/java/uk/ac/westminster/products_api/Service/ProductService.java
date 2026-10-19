@@ -1,6 +1,9 @@
-package uk.ac.westminster.products_api;
+package uk.ac.westminster.products_api.Service;
 
 import org.springframework.stereotype.Service;
+import uk.ac.westminster.products_api.Product.DigitalProduct;
+import uk.ac.westminster.products_api.Product.PhysicalProduct;
+import uk.ac.westminster.products_api.Product.Product;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,6 +14,30 @@ public class ProductService {
 
     private List<Product> products = new ArrayList<>();
     private Long nextId = 1L;
+
+    public ProductService(){
+            products.add(new DigitalProduct(
+                    nextId++, "Clean Code (E-Book)", 100.00,
+                    "downloads/cleancode.pdf", 12.00));
+
+            products.add(new PhysicalProduct(
+                    nextId++, "MacBook", 1500.00,
+                    3.5, "100.00 x 120 x 50"));
+
+    }
+//        Product digitalProduct = new DigitalProduct(nextId++,"Clean Code (E-Book)",
+//                100.00,
+//                "downloads/cleancode.pdf",
+//                12.00);
+//
+//        Product physicalproduct = new PhysicalProduct(nextId++,
+//                "Macbbook",
+//                1500.00,
+//                3.5,
+//                "100.00 x 120 x50");
+//
+//
+
 
     public List<Product> getAllProducts() {
         return products;
@@ -37,4 +64,6 @@ public class ProductService {
                 .filter(p -> p.getName().contains(name))
                 .toList();   
     }
+
+
 }
