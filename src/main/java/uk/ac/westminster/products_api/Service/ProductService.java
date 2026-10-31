@@ -13,6 +13,18 @@ import java.util.Optional;
 public class ProductService {
 
     private List<Product> products = new ArrayList<>();
+
+    public List<String> getAllSummaries() {
+
+        List<String> summaries = new ArrayList<>();
+
+        for (Product p : products) {
+            summaries.add(p.getSummary());
+        }
+
+        return summaries;
+    }
+    
     private Long nextId = 1L;
 
     public ProductService(){

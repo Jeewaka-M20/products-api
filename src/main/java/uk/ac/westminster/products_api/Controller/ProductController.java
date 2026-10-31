@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import uk.ac.westminster.products_api.Product.Product;
 import uk.ac.westminster.products_api.Service.ProductService;
+import uk.ac.westminster.products_api.Product.DigitalProduct;
 
 import java.util.List;
 
@@ -40,8 +41,13 @@ public class ProductController {
         return productService.addProduct(product);
     }
 
+    @GetMapping("/products/summaries")
+    public List<String> getSummaries() {
+        return productService.getAllSummaries();
+    }
     @DeleteMapping("/products/{id}")
     public void deleteProduct(@PathVariable Long id) {
         productService.deleteProduct(id);
     }
+
 }
